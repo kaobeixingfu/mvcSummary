@@ -1,0 +1,1264 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="RoadFlowWebFormModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityContainer Name="RoadFlowWebFormModelStoreContainer">
+          <EntitySet Name="AppLibrary" EntityType="RoadFlowWebFormModel.Store.AppLibrary" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="DBConnection" EntityType="RoadFlowWebFormModel.Store.DBConnection" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Dictionary" EntityType="RoadFlowWebFormModel.Store.Dictionary" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Log" EntityType="RoadFlowWebFormModel.Store.Log" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Organize" EntityType="RoadFlowWebFormModel.Store.Organize" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Role" EntityType="RoadFlowWebFormModel.Store.Role" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="RoleApp" EntityType="RoadFlowWebFormModel.Store.RoleApp" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="TempTest" EntityType="RoadFlowWebFormModel.Store.TempTest" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="TempTest_CustomForm" EntityType="RoadFlowWebFormModel.Store.TempTest_CustomForm" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="TempTest_News" EntityType="RoadFlowWebFormModel.Store.TempTest_News" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="TempTest_Purchase" EntityType="RoadFlowWebFormModel.Store.TempTest_Purchase" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="TempTest_PurchaseList" EntityType="RoadFlowWebFormModel.Store.TempTest_PurchaseList" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="TempTest_WorkOrder" EntityType="RoadFlowWebFormModel.Store.TempTest_WorkOrder" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Users" EntityType="RoadFlowWebFormModel.Store.Users" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="UsersApp" EntityType="RoadFlowWebFormModel.Store.UsersApp" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="UsersInfo" EntityType="RoadFlowWebFormModel.Store.UsersInfo" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="UsersRelation" EntityType="RoadFlowWebFormModel.Store.UsersRelation" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="UsersRole" EntityType="RoadFlowWebFormModel.Store.UsersRole" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="WorkFlow" EntityType="RoadFlowWebFormModel.Store.WorkFlow" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="WorkFlowArchives" EntityType="RoadFlowWebFormModel.Store.WorkFlowArchives" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="WorkFlowButtons" EntityType="RoadFlowWebFormModel.Store.WorkFlowButtons" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="WorkFlowComment" EntityType="RoadFlowWebFormModel.Store.WorkFlowComment" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="WorkFlowDelegation" EntityType="RoadFlowWebFormModel.Store.WorkFlowDelegation" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="WorkFlowForm" EntityType="RoadFlowWebFormModel.Store.WorkFlowForm" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="WorkFlowTask" EntityType="RoadFlowWebFormModel.Store.WorkFlowTask" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="WorkGroup" EntityType="RoadFlowWebFormModel.Store.WorkGroup" store:Type="Tables" Schema="dbo" />
+        </EntityContainer>
+        <EntityType Name="AppLibrary">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Title" Type="nvarchar" Nullable="false" MaxLength="255" />
+          <Property Name="Address" Type="varchar" Nullable="false" MaxLength="200" />
+          <Property Name="Type" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="OpenMode" Type="int" Nullable="false" />
+          <Property Name="Width" Type="int" />
+          <Property Name="Height" Type="int" />
+          <Property Name="Params" Type="varchar(max)" />
+          <Property Name="Manager" Type="varchar(max)" />
+          <Property Name="Note" Type="varchar(max)" />
+          <Property Name="Code" Type="varchar" MaxLength="50" />
+          <Property Name="UseMember" Type="varchar(max)" />
+        </EntityType>
+        <EntityType Name="DBConnection">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Name" Type="varchar" Nullable="false" MaxLength="500" />
+          <Property Name="Type" Type="varchar" Nullable="false" MaxLength="500" />
+          <Property Name="ConnectionString" Type="varchar(max)" Nullable="false" />
+          <Property Name="Note" Type="varchar(max)" />
+        </EntityType>
+        <EntityType Name="Dictionary">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="ParentID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Title" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Code" Type="varchar" MaxLength="500" />
+          <Property Name="Value" Type="varchar(max)" />
+          <Property Name="Note" Type="varchar(max)" />
+          <Property Name="Other" Type="varchar(max)" />
+          <Property Name="Sort" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Log">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Title" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Type" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="WriteTime" Type="datetime" Nullable="false" />
+          <Property Name="UserID" Type="uniqueidentifier" />
+          <Property Name="UserName" Type="nvarchar" MaxLength="50" />
+          <Property Name="IPAddress" Type="varchar" MaxLength="50" />
+          <Property Name="URL" Type="varchar(max)" />
+          <Property Name="Contents" Type="varchar(max)" />
+          <Property Name="Others" Type="varchar(max)" />
+          <Property Name="OldXml" Type="varchar(max)" />
+          <Property Name="NewXml" Type="varchar(max)" />
+        </EntityType>
+        <EntityType Name="Organize">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Name" Type="varchar" Nullable="false" MaxLength="2000" />
+          <Property Name="Number" Type="varchar" Nullable="false" MaxLength="900" />
+          <Property Name="Type" Type="int" Nullable="false" />
+          <Property Name="Status" Type="int" Nullable="false" />
+          <Property Name="ParentID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Sort" Type="int" Nullable="false" />
+          <Property Name="Depth" Type="int" Nullable="false" />
+          <Property Name="ChildsLength" Type="int" Nullable="false" />
+          <Property Name="ChargeLeader" Type="varchar" MaxLength="200" />
+          <Property Name="Leader" Type="varchar" MaxLength="200" />
+          <Property Name="Note" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="Role">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="200" />
+          <Property Name="UseMember" Type="varchar(max)" />
+          <Property Name="Note" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="RoleApp">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="ParentID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="RoleID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="AppID" Type="uniqueidentifier" />
+          <Property Name="Title" Type="nvarchar" Nullable="false" MaxLength="200" />
+          <Property Name="Params" Type="varchar(max)" />
+          <Property Name="Sort" Type="int" Nullable="false" />
+          <Property Name="Ico" Type="varchar" MaxLength="200" />
+          <Property Name="Type" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TempTest">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Title" Type="nvarchar" MaxLength="500" />
+          <Property Name="UserID" Type="varchar" MaxLength="50" />
+          <Property Name="UserID_text" Type="nvarchar" MaxLength="50" />
+          <Property Name="DeptID" Type="varchar" MaxLength="50" />
+          <Property Name="DeptName" Type="nvarchar" MaxLength="500" />
+          <Property Name="Date1" Type="datetime" />
+          <Property Name="Date2" Type="datetime" />
+          <Property Name="Type" Type="varchar" MaxLength="500" />
+          <Property Name="Reason" Type="nvarchar(max)" />
+          <Property Name="WriteTime" Type="datetime" />
+          <Property Name="Days" Type="float" />
+          <Property Name="test" Type="varchar" MaxLength="5000" />
+          <Property Name="test1" Type="varchar" MaxLength="5000" />
+          <Property Name="test2" Type="varchar" MaxLength="5000" />
+          <Property Name="test2_text" Type="varchar" MaxLength="5000" />
+          <Property Name="flowcompleted" Type="int" />
+        </EntityType>
+        <EntityType Name="TempTest_CustomForm">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Title" Type="nvarchar" Nullable="false" MaxLength="500" />
+          <Property Name="Contents" Type="nvarchar" Nullable="false" />
+          <Property Name="Type" Type="varchar" MaxLength="50" />
+          <Property Name="FlowCompleted" Type="int" />
+          <Property Name="wdate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="TempTest_News">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Title" Type="nvarchar" Nullable="false" MaxLength="500" />
+          <Property Name="Title1" Type="nvarchar" MaxLength="50" />
+          <Property Name="UserID" Type="varchar" MaxLength="50" />
+          <Property Name="Type" Type="varchar" MaxLength="500" />
+          <Property Name="Contents" Type="text" />
+          <Property Name="State" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TempTest_Purchase">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Title" Type="nvarchar" MaxLength="500" />
+          <Property Name="UserID" Type="varchar" MaxLength="50" />
+          <Property Name="UserDept" Type="varchar" MaxLength="50" />
+          <Property Name="SqDateTime" Type="varchar" MaxLength="50" />
+          <Property Name="TypeOther" Type="nvarchar" MaxLength="500" />
+          <Property Name="Note" Type="nvarchar" MaxLength="500" />
+          <Property Name="IsCompleted" Type="int" />
+        </EntityType>
+        <EntityType Name="TempTest_PurchaseList">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="PurchaseID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="500" />
+          <Property Name="Model" Type="varchar" MaxLength="50" />
+          <Property Name="Unit" Type="varchar" MaxLength="50" />
+          <Property Name="Quantity" Type="int" />
+          <Property Name="Sum1" Type="decimal" Scale="2" />
+          <Property Name="Date" Type="datetime" />
+          <Property Name="Type" Type="varchar" MaxLength="5000" />
+          <Property Name="Note" Type="nvarchar" MaxLength="500" />
+        </EntityType>
+        <EntityType Name="TempTest_WorkOrder">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Client_Number" Type="varchar" MaxLength="50" />
+          <Property Name="Client_Name" Type="varchar" MaxLength="50" />
+          <Property Name="Client_Phone" Type="varchar" MaxLength="50" />
+          <Property Name="Client_Tel" Type="varchar" MaxLength="50" />
+          <Property Name="Client_Company" Type="varchar" MaxLength="500" />
+          <Property Name="Client_CarNumber" Type="varchar" MaxLength="50" />
+          <Property Name="Client_CarJH" Type="varchar" MaxLength="50" />
+          <Property Name="Disp_Number" Type="varchar" MaxLength="50" />
+          <Property Name="Disp_Urgency" Type="varchar" MaxLength="50" />
+          <Property Name="Disp_SubmitUser" Type="varchar" MaxLength="50" />
+          <Property Name="Disp_HelpModel" Type="varchar" MaxLength="50" />
+          <Property Name="Disp_SelectModel" Type="varchar" MaxLength="50" />
+          <Property Name="Disp_Jdd" Type="varchar" MaxLength="50" />
+          <Property Name="Disp_Time" Type="datetime" />
+          <Property Name="Disp_Bc" Type="varchar" MaxLength="50" />
+          <Property Name="Disp_Engineer" Type="varchar" MaxLength="50" />
+          <Property Name="Disp_EngineerPhone" Type="varchar" MaxLength="50" />
+          <Property Name="Disp_CarNumber" Type="varchar" MaxLength="50" />
+          <Property Name="Disp_Type" Type="varchar" MaxLength="50" />
+          <Property Name="Disp_BussType" Type="varchar" MaxLength="50" />
+          <Property Name="Disp_Completed" Type="varchar" MaxLength="50" />
+          <Property Name="Disp_Address" Type="varchar" MaxLength="500" />
+        </EntityType>
+        <EntityType Name="Users">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="Account" Type="varchar" Nullable="false" MaxLength="255" />
+          <Property Name="Password" Type="varchar" Nullable="false" MaxLength="500" />
+          <Property Name="Status" Type="int" Nullable="false" />
+          <Property Name="Sort" Type="int" Nullable="false" />
+          <Property Name="Note" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="UsersApp">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="UserID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="ParentID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="RoleID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="AppID" Type="uniqueidentifier" />
+          <Property Name="Title" Type="nvarchar" MaxLength="200" />
+          <Property Name="Params" Type="varchar" MaxLength="500" />
+          <Property Name="Ico" Type="varchar" MaxLength="500" />
+          <Property Name="Sort" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="UsersInfo">
+          <Key>
+            <PropertyRef Name="UserID" />
+          </Key>
+          <Property Name="UserID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Tel" Type="varchar" MaxLength="500" />
+          <Property Name="Phone" Type="varchar" MaxLength="500" />
+          <Property Name="OtherTel" Type="varchar" MaxLength="500" />
+          <Property Name="Fax" Type="varchar" MaxLength="500" />
+          <Property Name="Address" Type="varchar" MaxLength="500" />
+          <Property Name="Email" Type="varchar" MaxLength="50" />
+          <Property Name="QQ" Type="varchar" MaxLength="50" />
+          <Property Name="Note" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="UsersRelation">
+          <Key>
+            <PropertyRef Name="UserID" />
+            <PropertyRef Name="OrganizeID" />
+          </Key>
+          <Property Name="UserID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="OrganizeID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="IsMain" Type="int" Nullable="false" />
+          <Property Name="Sort" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="UsersRole">
+          <Key>
+            <PropertyRef Name="MemberID" />
+            <PropertyRef Name="RoleID" />
+          </Key>
+          <Property Name="MemberID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="RoleID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="IsDefault" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="WorkFlow">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="500" />
+          <Property Name="Type" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Manager" Type="varchar" Nullable="false" MaxLength="5000" />
+          <Property Name="InstanceManager" Type="varchar" Nullable="false" MaxLength="5000" />
+          <Property Name="CreateDate" Type="datetime" Nullable="false" />
+          <Property Name="CreateUserID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="DesignJSON" Type="varchar(max)" />
+          <Property Name="InstallDate" Type="datetime" />
+          <Property Name="InstallUserID" Type="uniqueidentifier" />
+          <Property Name="RunJSON" Type="varchar(max)" />
+          <Property Name="Status" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="WorkFlowArchives">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="FlowID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="StepID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="FlowName" Type="nvarchar" Nullable="false" MaxLength="500" />
+          <Property Name="StepName" Type="nvarchar" Nullable="false" MaxLength="500" />
+          <Property Name="TaskID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="GroupID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="InstanceID" Type="varchar" Nullable="false" MaxLength="500" />
+          <Property Name="Title" Type="nvarchar" Nullable="false" />
+          <Property Name="Contents" Type="text" Nullable="false" />
+          <Property Name="Comments" Type="text" Nullable="false" />
+          <Property Name="WriteTime" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="WorkFlowButtons">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Title" Type="nvarchar" Nullable="false" MaxLength="500" />
+          <Property Name="Ico" Type="varchar" MaxLength="500" />
+          <Property Name="Script" Type="varchar(max)" />
+          <Property Name="Note" Type="varchar(max)" />
+          <Property Name="Sort" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="WorkFlowComment">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="MemberID" Type="varchar(max)" Nullable="false" />
+          <Property Name="Comment" Type="nvarchar" Nullable="false" MaxLength="500" />
+          <Property Name="Type" Type="int" Nullable="false" />
+          <Property Name="Sort" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="WorkFlowDelegation">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="UserID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="StartTime" Type="datetime" Nullable="false" />
+          <Property Name="EndTime" Type="datetime" Nullable="false" />
+          <Property Name="FlowID" Type="uniqueidentifier" />
+          <Property Name="ToUserID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="WriteTime" Type="datetime" Nullable="false" />
+          <Property Name="Note" Type="nvarchar" />
+        </EntityType>
+        <EntityType Name="WorkFlowForm">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="500" />
+          <Property Name="Type" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="CreateUserID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="CreateUserName" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="CreateTime" Type="datetime" Nullable="false" />
+          <Property Name="LastModifyTime" Type="datetime" Nullable="false" />
+          <Property Name="Html" Type="text" />
+          <Property Name="SubTableJson" Type="text" />
+          <Property Name="EventsJson" Type="text" />
+          <Property Name="Attribute" Type="varchar(max)" />
+          <Property Name="Status" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="WorkFlowTask">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="PrevID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="PrevStepID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="FlowID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="StepID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="StepName" Type="nvarchar" Nullable="false" MaxLength="500" />
+          <Property Name="InstanceID" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="GroupID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Type" Type="int" Nullable="false" />
+          <Property Name="Title" Type="nvarchar" Nullable="false" MaxLength="2000" />
+          <Property Name="SenderID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="SenderName" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="SenderTime" Type="datetime" Nullable="false" />
+          <Property Name="ReceiveID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="ReceiveName" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="ReceiveTime" Type="datetime" Nullable="false" />
+          <Property Name="OpenTime" Type="datetime" />
+          <Property Name="CompletedTime" Type="datetime" />
+          <Property Name="CompletedTime1" Type="datetime" />
+          <Property Name="Comment" Type="varchar(max)" />
+          <Property Name="IsSign" Type="int" />
+          <Property Name="Status" Type="int" Nullable="false" />
+          <Property Name="Note" Type="nvarchar(max)" />
+          <Property Name="Sort" Type="int" Nullable="false" />
+          <Property Name="SubFlowGroupID" Type="uniqueidentifier" />
+        </EntityType>
+        <EntityType Name="WorkGroup">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="500" />
+          <Property Name="Members" Type="varchar(max)" Nullable="false" />
+          <Property Name="Note" Type="nvarchar(max)" />
+        </EntityType>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="RoadFlowWebFormModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="RoadFlowWebFormEntities" p1:LazyLoadingEnabled="true">
+          <EntitySet Name="AppLibrary" EntityType="RoadFlowWebFormModel.AppLibrary" />
+          <EntitySet Name="DBConnection" EntityType="RoadFlowWebFormModel.DBConnection" />
+          <EntitySet Name="Dictionary" EntityType="RoadFlowWebFormModel.Dictionary" />
+          <EntitySet Name="Log" EntityType="RoadFlowWebFormModel.Log" />
+          <EntitySet Name="Organize" EntityType="RoadFlowWebFormModel.Organize" />
+          <EntitySet Name="Role" EntityType="RoadFlowWebFormModel.Role" />
+          <EntitySet Name="RoleApp" EntityType="RoadFlowWebFormModel.RoleApp" />
+          <EntitySet Name="TempTest" EntityType="RoadFlowWebFormModel.TempTest" />
+          <EntitySet Name="TempTest_CustomForm" EntityType="RoadFlowWebFormModel.TempTest_CustomForm" />
+          <EntitySet Name="TempTest_News" EntityType="RoadFlowWebFormModel.TempTest_News" />
+          <EntitySet Name="TempTest_Purchase" EntityType="RoadFlowWebFormModel.TempTest_Purchase" />
+          <EntitySet Name="TempTest_PurchaseList" EntityType="RoadFlowWebFormModel.TempTest_PurchaseList" />
+          <EntitySet Name="TempTest_WorkOrder" EntityType="RoadFlowWebFormModel.TempTest_WorkOrder" />
+          <EntitySet Name="Users" EntityType="RoadFlowWebFormModel.Users" />
+          <EntitySet Name="UsersApp" EntityType="RoadFlowWebFormModel.UsersApp" />
+          <EntitySet Name="UsersInfo" EntityType="RoadFlowWebFormModel.UsersInfo" />
+          <EntitySet Name="UsersRelation" EntityType="RoadFlowWebFormModel.UsersRelation" />
+          <EntitySet Name="UsersRole" EntityType="RoadFlowWebFormModel.UsersRole" />
+          <EntitySet Name="WorkFlow" EntityType="RoadFlowWebFormModel.WorkFlow" />
+          <EntitySet Name="WorkFlowArchives" EntityType="RoadFlowWebFormModel.WorkFlowArchives" />
+          <EntitySet Name="WorkFlowButtons" EntityType="RoadFlowWebFormModel.WorkFlowButtons" />
+          <EntitySet Name="WorkFlowComment" EntityType="RoadFlowWebFormModel.WorkFlowComment" />
+          <EntitySet Name="WorkFlowDelegation" EntityType="RoadFlowWebFormModel.WorkFlowDelegation" />
+          <EntitySet Name="WorkFlowForm" EntityType="RoadFlowWebFormModel.WorkFlowForm" />
+          <EntitySet Name="WorkFlowTask" EntityType="RoadFlowWebFormModel.WorkFlowTask" />
+          <EntitySet Name="WorkGroup" EntityType="RoadFlowWebFormModel.WorkGroup" />
+        </EntityContainer>
+        <EntityType Name="AppLibrary">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Guid" Nullable="false" />
+          <Property Name="Title" Type="String" Nullable="false" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="Address" Type="String" Nullable="false" MaxLength="200" Unicode="false" FixedLength="false" />
+          <Property Name="Type" Type="Guid" Nullable="false" />
+          <Property Name="OpenMode" Type="Int32" Nullable="false" />
+          <Property Name="Width" Type="Int32" />
+          <Property Name="Height" Type="Int32" />
+          <Property Name="Params" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="Manager" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="Note" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="Code" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="UseMember" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="DBConnection">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Guid" Nullable="false" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="500" Unicode="false" FixedLength="false" />
+          <Property Name="Type" Type="String" Nullable="false" MaxLength="500" Unicode="false" FixedLength="false" />
+          <Property Name="ConnectionString" Type="String" Nullable="false" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="Note" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="Dictionary">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Guid" Nullable="false" />
+          <Property Name="ParentID" Type="Guid" Nullable="false" />
+          <Property Name="Title" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="Code" Type="String" MaxLength="500" Unicode="false" FixedLength="false" />
+          <Property Name="Value" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="Note" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="Other" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="Sort" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Log">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Guid" Nullable="false" />
+          <Property Name="Title" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="Type" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="WriteTime" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="UserID" Type="Guid" />
+          <Property Name="UserName" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="IPAddress" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="URL" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="Contents" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="Others" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="OldXml" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="NewXml" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="Organize">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Guid" Nullable="false" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="2000" Unicode="false" FixedLength="false" />
+          <Property Name="Number" Type="String" Nullable="false" MaxLength="900" Unicode="false" FixedLength="false" />
+          <Property Name="Type" Type="Int32" Nullable="false" />
+          <Property Name="Status" Type="Int32" Nullable="false" />
+          <Property Name="ParentID" Type="Guid" Nullable="false" />
+          <Property Name="Sort" Type="Int32" Nullable="false" />
+          <Property Name="Depth" Type="Int32" Nullable="false" />
+          <Property Name="ChildsLength" Type="Int32" Nullable="false" />
+          <Property Name="ChargeLeader" Type="String" MaxLength="200" Unicode="false" FixedLength="false" />
+          <Property Name="Leader" Type="String" MaxLength="200" Unicode="false" FixedLength="false" />
+          <Property Name="Note" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="Role">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Guid" Nullable="false" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="200" Unicode="true" FixedLength="false" />
+          <Property Name="UseMember" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="Note" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="RoleApp">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Guid" Nullable="false" />
+          <Property Name="ParentID" Type="Guid" Nullable="false" />
+          <Property Name="RoleID" Type="Guid" Nullable="false" />
+          <Property Name="AppID" Type="Guid" />
+          <Property Name="Title" Type="String" Nullable="false" MaxLength="200" Unicode="true" FixedLength="false" />
+          <Property Name="Params" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="Sort" Type="Int32" Nullable="false" />
+          <Property Name="Ico" Type="String" MaxLength="200" Unicode="false" FixedLength="false" />
+          <Property Name="Type" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TempTest">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Guid" Nullable="false" />
+          <Property Name="Title" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+          <Property Name="UserID" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="UserID_text" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="DeptID" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="DeptName" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+          <Property Name="Date1" Type="DateTime" Precision="3" />
+          <Property Name="Date2" Type="DateTime" Precision="3" />
+          <Property Name="Type" Type="String" MaxLength="500" Unicode="false" FixedLength="false" />
+          <Property Name="Reason" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="WriteTime" Type="DateTime" Precision="3" />
+          <Property Name="Days" Type="Double" />
+          <Property Name="test" Type="String" MaxLength="5000" Unicode="false" FixedLength="false" />
+          <Property Name="test1" Type="String" MaxLength="5000" Unicode="false" FixedLength="false" />
+          <Property Name="test2" Type="String" MaxLength="5000" Unicode="false" FixedLength="false" />
+          <Property Name="test2_text" Type="String" MaxLength="5000" Unicode="false" FixedLength="false" />
+          <Property Name="flowcompleted" Type="Int32" />
+        </EntityType>
+        <EntityType Name="TempTest_CustomForm">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="Title" Type="String" Nullable="false" MaxLength="500" Unicode="true" FixedLength="false" />
+          <Property Name="Contents" Type="String" Nullable="false" MaxLength="4000" Unicode="true" FixedLength="false" />
+          <Property Name="Type" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="FlowCompleted" Type="Int32" />
+          <Property Name="wdate" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="TempTest_News">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="Title" Type="String" Nullable="false" MaxLength="500" Unicode="true" FixedLength="false" />
+          <Property Name="Title1" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="UserID" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="Type" Type="String" MaxLength="500" Unicode="false" FixedLength="false" />
+          <Property Name="Contents" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="State" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TempTest_Purchase">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Guid" Nullable="false" />
+          <Property Name="Title" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+          <Property Name="UserID" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="UserDept" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="SqDateTime" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="TypeOther" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+          <Property Name="Note" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+          <Property Name="IsCompleted" Type="Int32" />
+        </EntityType>
+        <EntityType Name="TempTest_PurchaseList">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Guid" Nullable="false" />
+          <Property Name="PurchaseID" Type="Guid" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+          <Property Name="Model" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="Unit" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="Quantity" Type="Int32" />
+          <Property Name="Sum1" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="Date" Type="DateTime" Precision="3" />
+          <Property Name="Type" Type="String" MaxLength="5000" Unicode="false" FixedLength="false" />
+          <Property Name="Note" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="TempTest_WorkOrder">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="Client_Number" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="Client_Name" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="Client_Phone" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="Client_Tel" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="Client_Company" Type="String" MaxLength="500" Unicode="false" FixedLength="false" />
+          <Property Name="Client_CarNumber" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="Client_CarJH" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="Disp_Number" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="Disp_Urgency" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="Disp_SubmitUser" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="Disp_HelpModel" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="Disp_SelectModel" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="Disp_Jdd" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="Disp_Time" Type="DateTime" Precision="3" />
+          <Property Name="Disp_Bc" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="Disp_Engineer" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="Disp_EngineerPhone" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="Disp_CarNumber" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="Disp_Type" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="Disp_BussType" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="Disp_Completed" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="Disp_Address" Type="String" MaxLength="500" Unicode="false" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="Users">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Guid" Nullable="false" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Account" Type="String" Nullable="false" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="Password" Type="String" Nullable="false" MaxLength="500" Unicode="false" FixedLength="false" />
+          <Property Name="Status" Type="Int32" Nullable="false" />
+          <Property Name="Sort" Type="Int32" Nullable="false" />
+          <Property Name="Note" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="UsersApp">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Guid" Nullable="false" />
+          <Property Name="UserID" Type="Guid" Nullable="false" />
+          <Property Name="ParentID" Type="Guid" Nullable="false" />
+          <Property Name="RoleID" Type="Guid" Nullable="false" />
+          <Property Name="AppID" Type="Guid" />
+          <Property Name="Title" Type="String" MaxLength="200" Unicode="true" FixedLength="false" />
+          <Property Name="Params" Type="String" MaxLength="500" Unicode="false" FixedLength="false" />
+          <Property Name="Ico" Type="String" MaxLength="500" Unicode="false" FixedLength="false" />
+          <Property Name="Sort" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="UsersInfo">
+          <Key>
+            <PropertyRef Name="UserID" />
+          </Key>
+          <Property Name="UserID" Type="Guid" Nullable="false" />
+          <Property Name="Tel" Type="String" MaxLength="500" Unicode="false" FixedLength="false" />
+          <Property Name="Phone" Type="String" MaxLength="500" Unicode="false" FixedLength="false" />
+          <Property Name="OtherTel" Type="String" MaxLength="500" Unicode="false" FixedLength="false" />
+          <Property Name="Fax" Type="String" MaxLength="500" Unicode="false" FixedLength="false" />
+          <Property Name="Address" Type="String" MaxLength="500" Unicode="false" FixedLength="false" />
+          <Property Name="Email" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="QQ" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="Note" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="UsersRelation">
+          <Key>
+            <PropertyRef Name="UserID" />
+            <PropertyRef Name="OrganizeID" />
+          </Key>
+          <Property Name="UserID" Type="Guid" Nullable="false" />
+          <Property Name="OrganizeID" Type="Guid" Nullable="false" />
+          <Property Name="IsMain" Type="Int32" Nullable="false" />
+          <Property Name="Sort" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="UsersRole">
+          <Key>
+            <PropertyRef Name="MemberID" />
+            <PropertyRef Name="RoleID" />
+          </Key>
+          <Property Name="MemberID" Type="Guid" Nullable="false" />
+          <Property Name="RoleID" Type="Guid" Nullable="false" />
+          <Property Name="IsDefault" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <EntityType Name="WorkFlow">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Guid" Nullable="false" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="500" Unicode="true" FixedLength="false" />
+          <Property Name="Type" Type="Guid" Nullable="false" />
+          <Property Name="Manager" Type="String" Nullable="false" MaxLength="5000" Unicode="false" FixedLength="false" />
+          <Property Name="InstanceManager" Type="String" Nullable="false" MaxLength="5000" Unicode="false" FixedLength="false" />
+          <Property Name="CreateDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="CreateUserID" Type="Guid" Nullable="false" />
+          <Property Name="DesignJSON" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="InstallDate" Type="DateTime" Precision="3" />
+          <Property Name="InstallUserID" Type="Guid" />
+          <Property Name="RunJSON" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="Status" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="WorkFlowArchives">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Guid" Nullable="false" />
+          <Property Name="FlowID" Type="Guid" Nullable="false" />
+          <Property Name="StepID" Type="Guid" Nullable="false" />
+          <Property Name="FlowName" Type="String" Nullable="false" MaxLength="500" Unicode="true" FixedLength="false" />
+          <Property Name="StepName" Type="String" Nullable="false" MaxLength="500" Unicode="true" FixedLength="false" />
+          <Property Name="TaskID" Type="Guid" Nullable="false" />
+          <Property Name="GroupID" Type="Guid" Nullable="false" />
+          <Property Name="InstanceID" Type="String" Nullable="false" MaxLength="500" Unicode="false" FixedLength="false" />
+          <Property Name="Title" Type="String" Nullable="false" MaxLength="4000" Unicode="true" FixedLength="false" />
+          <Property Name="Contents" Type="String" Nullable="false" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="Comments" Type="String" Nullable="false" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="WriteTime" Type="DateTime" Nullable="false" Precision="3" />
+        </EntityType>
+        <EntityType Name="WorkFlowButtons">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Guid" Nullable="false" />
+          <Property Name="Title" Type="String" Nullable="false" MaxLength="500" Unicode="true" FixedLength="false" />
+          <Property Name="Ico" Type="String" MaxLength="500" Unicode="false" FixedLength="false" />
+          <Property Name="Script" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="Note" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="Sort" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="WorkFlowComment">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Guid" Nullable="false" />
+          <Property Name="MemberID" Type="String" Nullable="false" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="Comment" Type="String" Nullable="false" MaxLength="500" Unicode="true" FixedLength="false" />
+          <Property Name="Type" Type="Int32" Nullable="false" />
+          <Property Name="Sort" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="WorkFlowDelegation">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Guid" Nullable="false" />
+          <Property Name="UserID" Type="Guid" Nullable="false" />
+          <Property Name="StartTime" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="EndTime" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="FlowID" Type="Guid" />
+          <Property Name="ToUserID" Type="Guid" Nullable="false" />
+          <Property Name="WriteTime" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Note" Type="String" MaxLength="4000" Unicode="true" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="WorkFlowForm">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Guid" Nullable="false" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="500" Unicode="true" FixedLength="false" />
+          <Property Name="Type" Type="Guid" Nullable="false" />
+          <Property Name="CreateUserID" Type="Guid" Nullable="false" />
+          <Property Name="CreateUserName" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="CreateTime" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="LastModifyTime" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Html" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="SubTableJson" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="EventsJson" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="Attribute" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="Status" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="WorkFlowTask">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Guid" Nullable="false" />
+          <Property Name="PrevID" Type="Guid" Nullable="false" />
+          <Property Name="PrevStepID" Type="Guid" Nullable="false" />
+          <Property Name="FlowID" Type="Guid" Nullable="false" />
+          <Property Name="StepID" Type="Guid" Nullable="false" />
+          <Property Name="StepName" Type="String" Nullable="false" MaxLength="500" Unicode="true" FixedLength="false" />
+          <Property Name="InstanceID" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="GroupID" Type="Guid" Nullable="false" />
+          <Property Name="Type" Type="Int32" Nullable="false" />
+          <Property Name="Title" Type="String" Nullable="false" MaxLength="2000" Unicode="true" FixedLength="false" />
+          <Property Name="SenderID" Type="Guid" Nullable="false" />
+          <Property Name="SenderName" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="SenderTime" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="ReceiveID" Type="Guid" Nullable="false" />
+          <Property Name="ReceiveName" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="ReceiveTime" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="OpenTime" Type="DateTime" Precision="3" />
+          <Property Name="CompletedTime" Type="DateTime" Precision="3" />
+          <Property Name="CompletedTime1" Type="DateTime" Precision="3" />
+          <Property Name="Comment" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="IsSign" Type="Int32" />
+          <Property Name="Status" Type="Int32" Nullable="false" />
+          <Property Name="Note" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="Sort" Type="Int32" Nullable="false" />
+          <Property Name="SubFlowGroupID" Type="Guid" />
+        </EntityType>
+        <EntityType Name="WorkGroup">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Guid" Nullable="false" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="500" Unicode="true" FixedLength="false" />
+          <Property Name="Members" Type="String" Nullable="false" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="Note" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="RoadFlowWebFormModelStoreContainer" CdmEntityContainer="RoadFlowWebFormEntities">
+          <EntitySetMapping Name="AppLibrary">
+            <EntityTypeMapping TypeName="RoadFlowWebFormModel.AppLibrary">
+              <MappingFragment StoreEntitySet="AppLibrary">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
+                <ScalarProperty Name="OpenMode" ColumnName="OpenMode" />
+                <ScalarProperty Name="Width" ColumnName="Width" />
+                <ScalarProperty Name="Height" ColumnName="Height" />
+                <ScalarProperty Name="Params" ColumnName="Params" />
+                <ScalarProperty Name="Manager" ColumnName="Manager" />
+                <ScalarProperty Name="Note" ColumnName="Note" />
+                <ScalarProperty Name="Code" ColumnName="Code" />
+                <ScalarProperty Name="UseMember" ColumnName="UseMember" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DBConnection">
+            <EntityTypeMapping TypeName="RoadFlowWebFormModel.DBConnection">
+              <MappingFragment StoreEntitySet="DBConnection">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
+                <ScalarProperty Name="ConnectionString" ColumnName="ConnectionString" />
+                <ScalarProperty Name="Note" ColumnName="Note" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Dictionary">
+            <EntityTypeMapping TypeName="RoadFlowWebFormModel.Dictionary">
+              <MappingFragment StoreEntitySet="Dictionary">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="ParentID" ColumnName="ParentID" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="Code" ColumnName="Code" />
+                <ScalarProperty Name="Value" ColumnName="Value" />
+                <ScalarProperty Name="Note" ColumnName="Note" />
+                <ScalarProperty Name="Other" ColumnName="Other" />
+                <ScalarProperty Name="Sort" ColumnName="Sort" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Log">
+            <EntityTypeMapping TypeName="RoadFlowWebFormModel.Log">
+              <MappingFragment StoreEntitySet="Log">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
+                <ScalarProperty Name="WriteTime" ColumnName="WriteTime" />
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="IPAddress" ColumnName="IPAddress" />
+                <ScalarProperty Name="URL" ColumnName="URL" />
+                <ScalarProperty Name="Contents" ColumnName="Contents" />
+                <ScalarProperty Name="Others" ColumnName="Others" />
+                <ScalarProperty Name="OldXml" ColumnName="OldXml" />
+                <ScalarProperty Name="NewXml" ColumnName="NewXml" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Organize">
+            <EntityTypeMapping TypeName="RoadFlowWebFormModel.Organize">
+              <MappingFragment StoreEntitySet="Organize">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Number" ColumnName="Number" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="ParentID" ColumnName="ParentID" />
+                <ScalarProperty Name="Sort" ColumnName="Sort" />
+                <ScalarProperty Name="Depth" ColumnName="Depth" />
+                <ScalarProperty Name="ChildsLength" ColumnName="ChildsLength" />
+                <ScalarProperty Name="ChargeLeader" ColumnName="ChargeLeader" />
+                <ScalarProperty Name="Leader" ColumnName="Leader" />
+                <ScalarProperty Name="Note" ColumnName="Note" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Role">
+            <EntityTypeMapping TypeName="RoadFlowWebFormModel.Role">
+              <MappingFragment StoreEntitySet="Role">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="UseMember" ColumnName="UseMember" />
+                <ScalarProperty Name="Note" ColumnName="Note" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="RoleApp">
+            <EntityTypeMapping TypeName="RoadFlowWebFormModel.RoleApp">
+              <MappingFragment StoreEntitySet="RoleApp">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="ParentID" ColumnName="ParentID" />
+                <ScalarProperty Name="RoleID" ColumnName="RoleID" />
+                <ScalarProperty Name="AppID" ColumnName="AppID" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="Params" ColumnName="Params" />
+                <ScalarProperty Name="Sort" ColumnName="Sort" />
+                <ScalarProperty Name="Ico" ColumnName="Ico" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TempTest">
+            <EntityTypeMapping TypeName="RoadFlowWebFormModel.TempTest">
+              <MappingFragment StoreEntitySet="TempTest">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+                <ScalarProperty Name="UserID_text" ColumnName="UserID_text" />
+                <ScalarProperty Name="DeptID" ColumnName="DeptID" />
+                <ScalarProperty Name="DeptName" ColumnName="DeptName" />
+                <ScalarProperty Name="Date1" ColumnName="Date1" />
+                <ScalarProperty Name="Date2" ColumnName="Date2" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
+                <ScalarProperty Name="Reason" ColumnName="Reason" />
+                <ScalarProperty Name="WriteTime" ColumnName="WriteTime" />
+                <ScalarProperty Name="Days" ColumnName="Days" />
+                <ScalarProperty Name="test" ColumnName="test" />
+                <ScalarProperty Name="test1" ColumnName="test1" />
+                <ScalarProperty Name="test2" ColumnName="test2" />
+                <ScalarProperty Name="test2_text" ColumnName="test2_text" />
+                <ScalarProperty Name="flowcompleted" ColumnName="flowcompleted" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TempTest_CustomForm">
+            <EntityTypeMapping TypeName="RoadFlowWebFormModel.TempTest_CustomForm">
+              <MappingFragment StoreEntitySet="TempTest_CustomForm">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="Contents" ColumnName="Contents" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
+                <ScalarProperty Name="FlowCompleted" ColumnName="FlowCompleted" />
+                <ScalarProperty Name="wdate" ColumnName="wdate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TempTest_News">
+            <EntityTypeMapping TypeName="RoadFlowWebFormModel.TempTest_News">
+              <MappingFragment StoreEntitySet="TempTest_News">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="Title1" ColumnName="Title1" />
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
+                <ScalarProperty Name="Contents" ColumnName="Contents" />
+                <ScalarProperty Name="State" ColumnName="State" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TempTest_Purchase">
+            <EntityTypeMapping TypeName="RoadFlowWebFormModel.TempTest_Purchase">
+              <MappingFragment StoreEntitySet="TempTest_Purchase">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+                <ScalarProperty Name="UserDept" ColumnName="UserDept" />
+                <ScalarProperty Name="SqDateTime" ColumnName="SqDateTime" />
+                <ScalarProperty Name="TypeOther" ColumnName="TypeOther" />
+                <ScalarProperty Name="Note" ColumnName="Note" />
+                <ScalarProperty Name="IsCompleted" ColumnName="IsCompleted" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TempTest_PurchaseList">
+            <EntityTypeMapping TypeName="RoadFlowWebFormModel.TempTest_PurchaseList">
+              <MappingFragment StoreEntitySet="TempTest_PurchaseList">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="PurchaseID" ColumnName="PurchaseID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Model" ColumnName="Model" />
+                <ScalarProperty Name="Unit" ColumnName="Unit" />
+                <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+                <ScalarProperty Name="Sum1" ColumnName="Sum1" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
+                <ScalarProperty Name="Note" ColumnName="Note" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TempTest_WorkOrder">
+            <EntityTypeMapping TypeName="RoadFlowWebFormModel.TempTest_WorkOrder">
+              <MappingFragment StoreEntitySet="TempTest_WorkOrder">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Client_Number" ColumnName="Client_Number" />
+                <ScalarProperty Name="Client_Name" ColumnName="Client_Name" />
+                <ScalarProperty Name="Client_Phone" ColumnName="Client_Phone" />
+                <ScalarProperty Name="Client_Tel" ColumnName="Client_Tel" />
+                <ScalarProperty Name="Client_Company" ColumnName="Client_Company" />
+                <ScalarProperty Name="Client_CarNumber" ColumnName="Client_CarNumber" />
+                <ScalarProperty Name="Client_CarJH" ColumnName="Client_CarJH" />
+                <ScalarProperty Name="Disp_Number" ColumnName="Disp_Number" />
+                <ScalarProperty Name="Disp_Urgency" ColumnName="Disp_Urgency" />
+                <ScalarProperty Name="Disp_SubmitUser" ColumnName="Disp_SubmitUser" />
+                <ScalarProperty Name="Disp_HelpModel" ColumnName="Disp_HelpModel" />
+                <ScalarProperty Name="Disp_SelectModel" ColumnName="Disp_SelectModel" />
+                <ScalarProperty Name="Disp_Jdd" ColumnName="Disp_Jdd" />
+                <ScalarProperty Name="Disp_Time" ColumnName="Disp_Time" />
+                <ScalarProperty Name="Disp_Bc" ColumnName="Disp_Bc" />
+                <ScalarProperty Name="Disp_Engineer" ColumnName="Disp_Engineer" />
+                <ScalarProperty Name="Disp_EngineerPhone" ColumnName="Disp_EngineerPhone" />
+                <ScalarProperty Name="Disp_CarNumber" ColumnName="Disp_CarNumber" />
+                <ScalarProperty Name="Disp_Type" ColumnName="Disp_Type" />
+                <ScalarProperty Name="Disp_BussType" ColumnName="Disp_BussType" />
+                <ScalarProperty Name="Disp_Completed" ColumnName="Disp_Completed" />
+                <ScalarProperty Name="Disp_Address" ColumnName="Disp_Address" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Users">
+            <EntityTypeMapping TypeName="RoadFlowWebFormModel.Users">
+              <MappingFragment StoreEntitySet="Users">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Account" ColumnName="Account" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="Sort" ColumnName="Sort" />
+                <ScalarProperty Name="Note" ColumnName="Note" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UsersApp">
+            <EntityTypeMapping TypeName="RoadFlowWebFormModel.UsersApp">
+              <MappingFragment StoreEntitySet="UsersApp">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+                <ScalarProperty Name="ParentID" ColumnName="ParentID" />
+                <ScalarProperty Name="RoleID" ColumnName="RoleID" />
+                <ScalarProperty Name="AppID" ColumnName="AppID" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="Params" ColumnName="Params" />
+                <ScalarProperty Name="Ico" ColumnName="Ico" />
+                <ScalarProperty Name="Sort" ColumnName="Sort" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UsersInfo">
+            <EntityTypeMapping TypeName="RoadFlowWebFormModel.UsersInfo">
+              <MappingFragment StoreEntitySet="UsersInfo">
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+                <ScalarProperty Name="Tel" ColumnName="Tel" />
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+                <ScalarProperty Name="OtherTel" ColumnName="OtherTel" />
+                <ScalarProperty Name="Fax" ColumnName="Fax" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="QQ" ColumnName="QQ" />
+                <ScalarProperty Name="Note" ColumnName="Note" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UsersRelation">
+            <EntityTypeMapping TypeName="RoadFlowWebFormModel.UsersRelation">
+              <MappingFragment StoreEntitySet="UsersRelation">
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+                <ScalarProperty Name="OrganizeID" ColumnName="OrganizeID" />
+                <ScalarProperty Name="IsMain" ColumnName="IsMain" />
+                <ScalarProperty Name="Sort" ColumnName="Sort" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UsersRole">
+            <EntityTypeMapping TypeName="RoadFlowWebFormModel.UsersRole">
+              <MappingFragment StoreEntitySet="UsersRole">
+                <ScalarProperty Name="MemberID" ColumnName="MemberID" />
+                <ScalarProperty Name="RoleID" ColumnName="RoleID" />
+                <ScalarProperty Name="IsDefault" ColumnName="IsDefault" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="WorkFlow">
+            <EntityTypeMapping TypeName="RoadFlowWebFormModel.WorkFlow">
+              <MappingFragment StoreEntitySet="WorkFlow">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
+                <ScalarProperty Name="Manager" ColumnName="Manager" />
+                <ScalarProperty Name="InstanceManager" ColumnName="InstanceManager" />
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="CreateUserID" ColumnName="CreateUserID" />
+                <ScalarProperty Name="DesignJSON" ColumnName="DesignJSON" />
+                <ScalarProperty Name="InstallDate" ColumnName="InstallDate" />
+                <ScalarProperty Name="InstallUserID" ColumnName="InstallUserID" />
+                <ScalarProperty Name="RunJSON" ColumnName="RunJSON" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="WorkFlowArchives">
+            <EntityTypeMapping TypeName="RoadFlowWebFormModel.WorkFlowArchives">
+              <MappingFragment StoreEntitySet="WorkFlowArchives">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="FlowID" ColumnName="FlowID" />
+                <ScalarProperty Name="StepID" ColumnName="StepID" />
+                <ScalarProperty Name="FlowName" ColumnName="FlowName" />
+                <ScalarProperty Name="StepName" ColumnName="StepName" />
+                <ScalarProperty Name="TaskID" ColumnName="TaskID" />
+                <ScalarProperty Name="GroupID" ColumnName="GroupID" />
+                <ScalarProperty Name="InstanceID" ColumnName="InstanceID" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="Contents" ColumnName="Contents" />
+                <ScalarProperty Name="Comments" ColumnName="Comments" />
+                <ScalarProperty Name="WriteTime" ColumnName="WriteTime" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="WorkFlowButtons">
+            <EntityTypeMapping TypeName="RoadFlowWebFormModel.WorkFlowButtons">
+              <MappingFragment StoreEntitySet="WorkFlowButtons">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="Ico" ColumnName="Ico" />
+                <ScalarProperty Name="Script" ColumnName="Script" />
+                <ScalarProperty Name="Note" ColumnName="Note" />
+                <ScalarProperty Name="Sort" ColumnName="Sort" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="WorkFlowComment">
+            <EntityTypeMapping TypeName="RoadFlowWebFormModel.WorkFlowComment">
+              <MappingFragment StoreEntitySet="WorkFlowComment">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="MemberID" ColumnName="MemberID" />
+                <ScalarProperty Name="Comment" ColumnName="Comment" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
+                <ScalarProperty Name="Sort" ColumnName="Sort" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="WorkFlowDelegation">
+            <EntityTypeMapping TypeName="RoadFlowWebFormModel.WorkFlowDelegation">
+              <MappingFragment StoreEntitySet="WorkFlowDelegation">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+                <ScalarProperty Name="StartTime" ColumnName="StartTime" />
+                <ScalarProperty Name="EndTime" ColumnName="EndTime" />
+                <ScalarProperty Name="FlowID" ColumnName="FlowID" />
+                <ScalarProperty Name="ToUserID" ColumnName="ToUserID" />
+                <ScalarProperty Name="WriteTime" ColumnName="WriteTime" />
+                <ScalarProperty Name="Note" ColumnName="Note" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="WorkFlowForm">
+            <EntityTypeMapping TypeName="RoadFlowWebFormModel.WorkFlowForm">
+              <MappingFragment StoreEntitySet="WorkFlowForm">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
+                <ScalarProperty Name="CreateUserID" ColumnName="CreateUserID" />
+                <ScalarProperty Name="CreateUserName" ColumnName="CreateUserName" />
+                <ScalarProperty Name="CreateTime" ColumnName="CreateTime" />
+                <ScalarProperty Name="LastModifyTime" ColumnName="LastModifyTime" />
+                <ScalarProperty Name="Html" ColumnName="Html" />
+                <ScalarProperty Name="SubTableJson" ColumnName="SubTableJson" />
+                <ScalarProperty Name="EventsJson" ColumnName="EventsJson" />
+                <ScalarProperty Name="Attribute" ColumnName="Attribute" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="WorkFlowTask">
+            <EntityTypeMapping TypeName="RoadFlowWebFormModel.WorkFlowTask">
+              <MappingFragment StoreEntitySet="WorkFlowTask">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="PrevID" ColumnName="PrevID" />
+                <ScalarProperty Name="PrevStepID" ColumnName="PrevStepID" />
+                <ScalarProperty Name="FlowID" ColumnName="FlowID" />
+                <ScalarProperty Name="StepID" ColumnName="StepID" />
+                <ScalarProperty Name="StepName" ColumnName="StepName" />
+                <ScalarProperty Name="InstanceID" ColumnName="InstanceID" />
+                <ScalarProperty Name="GroupID" ColumnName="GroupID" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="SenderID" ColumnName="SenderID" />
+                <ScalarProperty Name="SenderName" ColumnName="SenderName" />
+                <ScalarProperty Name="SenderTime" ColumnName="SenderTime" />
+                <ScalarProperty Name="ReceiveID" ColumnName="ReceiveID" />
+                <ScalarProperty Name="ReceiveName" ColumnName="ReceiveName" />
+                <ScalarProperty Name="ReceiveTime" ColumnName="ReceiveTime" />
+                <ScalarProperty Name="OpenTime" ColumnName="OpenTime" />
+                <ScalarProperty Name="CompletedTime" ColumnName="CompletedTime" />
+                <ScalarProperty Name="CompletedTime1" ColumnName="CompletedTime1" />
+                <ScalarProperty Name="Comment" ColumnName="Comment" />
+                <ScalarProperty Name="IsSign" ColumnName="IsSign" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="Note" ColumnName="Note" />
+                <ScalarProperty Name="Sort" ColumnName="Sort" />
+                <ScalarProperty Name="SubFlowGroupID" ColumnName="SubFlowGroupID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="WorkGroup">
+            <EntityTypeMapping TypeName="RoadFlowWebFormModel.WorkGroup">
+              <MappingFragment StoreEntitySet="WorkGroup">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Members" ColumnName="Members" />
+                <ScalarProperty Name="Note" ColumnName="Note" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="无" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
